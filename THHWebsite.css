@@ -25,6 +25,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px;
 }
 
 .logo {
@@ -40,6 +42,7 @@ nav {
   max-height: 50px;
   width: auto;
   margin-right: 1rem;
+  border-radius: 8px;
 }
 
 .nav-items {
@@ -295,12 +298,15 @@ nav a:hover {
   nav {
     height: 80px;
     padding: 0.5rem;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
   }
   .logo {
     font-size: 1.2rem;
   }
   .logo img {
     max-height: 40px;
+    border-radius: 8px;
   }
   .hamburger {
     display: block;
@@ -314,6 +320,7 @@ nav a:hover {
     background-color: #808080;
     flex-direction: column;
     align-items: center;
+    border-radius: 0 0 10px 10px;
   }
   .nav-toggle:checked ~ .nav-items {
     display: flex;
