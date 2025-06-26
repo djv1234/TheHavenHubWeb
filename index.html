@@ -183,7 +183,7 @@ If we learn that any account belongs to an individual that is under the age of 1
     <p>For questions or concerns, please contact: volf.dmitry@gmail.com
       or barot.22@buckeyemail.osu.edu. Usually, someone will respond to you and address your concern within 24 hours of contact.</p>
   </section>
-  <script>
+<script>
     // Autoplay video on desktop
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.querySelector('.hero-image');
@@ -193,21 +193,44 @@ If we learn that any account belongs to an individual that is under the age of 1
         });
       }
     });
-  </script>
-    <script>
-     document.addEventListener('DOMContentLoaded', function() {
-       const navToggle = document.getElementById('nav-toggle');
-       const nav = document.querySelector('nav');
-       navToggle.addEventListener('change', function() {
-         if (navToggle.checked) {
-           nav.style.borderBottomLeftRadius = '0';
-           nav.style.borderBottomRightRadius = '0';
-          } else {
-            nav.style.borderBottomLeftRadius = '10px';
-            nav.style.borderBottomRightRadius = '10px';
-      }
+</script>
+<script>
+    // Navigation toggle and smooth scrolling
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('nav-toggle');
+      const nav = document.querySelector('nav');
+
+      // Toggle nav border-radius
+      navToggle.addEventListener('change', function() {
+        if (navToggle.checked) {
+          nav.style.borderBottomLeftRadius = '0';
+          nav.style.borderBottomRightRadius = '0';
+        } else {
+          nav.style.borderBottomLeftRadius = '10px';
+          nav.style.borderBottomRightRadius = '10px';
+        }
+      });
+
+      // Smooth scrolling for nav items
+      const navLinks = document.querySelectorAll('.nav-items a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          if (this.hash) {
+            e.preventDefault(); // Prevent default anchor jump
+            const target = document.querySelector(this.hash);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+              // Close the mobile menu if open
+              if (navToggle.checked) {
+                navToggle.checked = false;
+                nav.style.borderBottomLeftRadius = '10px';
+                nav.style.borderBottomRightRadius = '10px';
+              }
+            }
+          }
+        });
+      });
     });
-  });
-  </script>
+</script>
 </body>
 </html>
