@@ -44,7 +44,7 @@
       </div>
       <div class="column-right">
         <div class="preview">
-           <video src="ScreenPreviewTHH.mp4" class="hero-image" controls autoplay muted loop>
+           <video src="ScreenPreviewTHH.mp4" class="hero-image" controls muted loop>
            Your browser does not support the video tag.
            </video>
         </div>
@@ -183,5 +183,16 @@ If we learn that any account belongs to an individual that is under the age of 1
     <p>For questions or concerns, please contact: volf.dmitry@gmail.com
       or barot.22@buckeyemail.osu.edu. Usually, someone will respond to you and address your concern within 24 hours of contact.</p>
   </section>
+  <script>
+    // Autoplay video on desktop
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('.hero-image');
+      if (window.innerWidth > 768) {
+        video.play().catch(function(error) {
+          console.log('Autoplay was prevented:', error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
