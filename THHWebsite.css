@@ -27,6 +27,7 @@ nav {
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  z-index: 1000;
 }
 
 .logo {
@@ -269,10 +270,21 @@ nav a:hover {
   max-width: 250px;
   height: auto;
   transition: transform 0.3s;
+  border: none;
+  transform: scale(1); 
 }
 
-.partner-image:hover {
+.partner-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.partner-link:hover .partner-image {
   transform: scale(1.1);
+}
+
+.partner-link:hover h2 {
+  text-decoration: underline; 
 }
 
 .privacy-policy, .contact-us {
